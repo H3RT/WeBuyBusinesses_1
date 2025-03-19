@@ -1,17 +1,35 @@
 {
   "name": "WeBuyBusinesses_1",
   "version": "1.0.0",
-  "description": "A simple Node.js application",
+  "description": "A project to buy businesses",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
+  "keywords": [
+    "business",
+    "buy",
+    "startup"
+  ],
   "author": "Your Name",
   "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H3RT/WeBuyBusinesses_1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/H3RT/WeBuyBusinesses_1/issues"
+  },
+  "homepage": "https://github.com/H3RT/WeBuyBusinesses_1#readme"
 }
