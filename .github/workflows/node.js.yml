@@ -1,25 +1,40 @@
 name: Node.js CI
 
+# Trigger the workflow on push or pull request events to the main branch
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use Ubuntu as the runner
 
     steps:
+      # Step 1: Checkout code from the repository
       - name: Checkout code
-        uses: actions/checkout@v2  # This uses the GitHub action to checkout the repo
+        uses: actions/checkout@v2  # Checkout your code from the repository
 
+      # Step 2: Set up Node.js (Specify the Node.js version to use)
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v2  # Use actions/setup-node to set up Node.js
         with:
-          node-version: '14'  # Specifies which Node.js version to use
+          node-version: '14'  # Specify the Node.js version (change this to your required version)
 
+      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install  # This runs the npm install command
+        run: npm install  # Install the project's dependencies based on package.json
 
+      # Step 4: Run tests
       - name: Run tests
-        run: npm test  # This runs the npm test command
+        run: npm test  # Run your tests (ensure you have a test script defined in package.json)
+
+      # Optional Step: Deploy your project (for example, to a platform like Heroku, AWS, or others)
+      # Uncomment and modify if you need to deploy after tests
+      # - name: Deploy to production
+      #   run: |
+      #     # Add your deployment commands here (e.g., AWS CLI, Heroku CLI, etc.)
+      #     echo "Deploying to production..."
