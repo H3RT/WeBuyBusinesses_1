@@ -1,8 +1,8 @@
 # .yamllint
 ---
 rules:
-  indentation: disable  # Disables indentation checks
+  indentation: disable  
   line-length:
-    max: 120  # Optional: Allow lines up to 120 characters
+    max: 120  
   truthy:
-    level: warning  # Optional: Set truthy rule to warning level
+    level: warning 
